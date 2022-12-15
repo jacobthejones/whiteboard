@@ -102,3 +102,34 @@ function downloadImage() {
   // Remove the anchor element from the document
   document.body.removeChild(link);
 }
+
+// Set up an event listener that allows the user to draw on the canvas
+canvas.addEventListener("touchstart", function(e) {
+  // Prevent the default scrolling behavior
+  e.preventDefault();
+  isDrawing = true;
+  lastX = e.touches[0].clientX;
+  lastY = e.touches[0].clientY;
+});
+
+canvas.addEventListener("touchmove", function(e) {
+  // Prevent the default scrolling behavior
+  e.preventDefault();
+  if (isDrawing) {
+    // Draw a line from the last known position to the current position
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(e.touches[0].clientX, e.touches[0].clientY);
+    ctx.stroke();
+
+    // Update the last known position for the next line segment
+    lastX = e.touches[0].clientX;
+    lastY = e.touches[0].clientY;
+  }
+});
+
+canvas.addEventListener("touchend", function() {
+  // Prevent the default scrolling behavior
+  e.preventDefault();
+  isDrawing = false;
+});
