@@ -6,6 +6,18 @@
         position: absolute;
         z-index: 1;
       }
+
+      /* Add a "responsive" class to the <button> elements */
+      button.responsive {
+        /* Set the width of the buttons to be a larger percentage of the screen width */
+        width: 100%;
+
+        /* Set the height of the buttons to be a larger percentage of the screen height */
+        height: 15%;
+
+        /* Set the font size of the buttons to be a larger percentage of the screen height */
+        font-size: 300%;
+      }
     </style>
   </head>
   <body>
@@ -33,9 +45,9 @@
       <input type="color" id="stroke-color" />
 
       <br />
-      <button id="download-btn">Download Image</button>
-      <!-- Add the "Clear" button to the HTML code -->
-<button id="clear-btn">Clear</button>
+      <!-- Add the "class" attribute to the <button> elements, with the value "responsive" -->
+      <button id="clear-btn" class="responsive">Clear</button>
+      <button id="download-btn" class="responsive">Download Image</button>
     </div>
 
     <canvas
