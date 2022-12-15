@@ -13,6 +13,15 @@ var isDrawing = false;
 var lastX = 0;
 var lastY = 0;
 
+// Set up an event listener that updates the stroke color when the user touches the canvas
+canvas.addEventListener("touchstart", function() {
+  // Get the current stroke color from the <input type="color"> element
+  var strokeColor = document.getElementById("stroke-color").value;
+
+  // Update the stroke color of the drawing context
+  ctx.strokeStyle = strokeColor;
+});
+
 // Set up an event listener that allows the user to draw on the canvas
 canvas.addEventListener("mousedown", function(e) {
   isDrawing = true;
@@ -38,16 +47,16 @@ canvas.addEventListener("mouseup", function() {
   isDrawing = false;
 });
 
-
-
-// Set up the stroke width select element
+// Set up an event listener that updates the stroke width when the user selects a different option in the <select> element
 var strokeWidthSelect = document.getElementById("stroke-width");
-
-// Add an event listener that updates the lineWidth property of the drawing context
-// when the user selects a new option
 strokeWidthSelect.addEventListener("change", function() {
-  ctx.lineWidth = strokeWidthSelect.value;
+  // Get the selected stroke width value from the <select> element
+  var strokeWidth = strokeWidthSelect.value;
+
+  // Update the stroke width of the drawing context
+  ctx.lineWidth = strokeWidth;
 });
+
 
 // Set up the download button
 var downloadBtn = document.getElementById("download-btn");
@@ -132,4 +141,11 @@ canvas.addEventListener("touchend", function() {
   // Prevent the default scrolling behavior
   e.preventDefault();
   isDrawing = false;
+});
+
+// <!-- Set up the event listener that listens for a "click" event on the "Clear" button -->
+var clearBtn = document.getElementById("clear-btn");
+clearBtn.addEventListener("click", function() {
+  // Clear the contents of the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });

@@ -20,17 +20,31 @@
         <option value="2">2</option>
         <option value="3" selected>3</option>
         <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
       </select>
-      <br/>
-      <label>Stroke Color:</label>
-      <input type="color" id="stroke-color">
 
-      <br/>
+      <br />
+      <label>Stroke Color:</label>
+      <input type="color" id="stroke-color" />
+
+      <br />
       <button id="download-btn">Download Image</button>
+      <!-- Add the "Clear" button to the HTML code -->
+<button id="clear-btn">Clear</button>
     </div>
 
-    <canvas id="canvas" width="window.innerWidth" height="window.innerHeight" style="position: absolute; left: 0; top: 0;" border="1px solid black"></canvas>
-
+    <canvas
+      id="canvas"
+      width="window.innerWidth"
+      height="window.innerHeight"
+      style="position: absolute; left: 0; top: 0"
+      border="1px solid black"
+    ></canvas>
 
     <script src="whiteboard.js"></script>
   </body>
