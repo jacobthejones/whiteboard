@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Virtual Whiteboard</title>
+    <style>
+      #controls {
+        position: absolute;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Virtual Whiteboard</h1>
+
+    <p>Use your mouse to draw on the whiteboard:</p>
+
+    <div id="controls">
+      <label>Stroke Width:</label>
+      <select id="stroke-width">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+      </select>
+      <br/>
+      <label>Stroke Color:</label>
+      <input type="color" id="stroke-color">
+
+      <br/>
+      <button id="download-btn">Download Image</button>
+    </div>
+
+    <canvas id="canvas" width="window.innerWidth" height="window.innerHeight" border="1px solid black"></canvas>
+
+    <script src="whiteboard.js"></script>
+  </body>
+</html>
